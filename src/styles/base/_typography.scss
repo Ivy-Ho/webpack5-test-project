@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "NotoSansTC";
+  src: url("../font/NotoSansTC-Regular.otf") format("opentype");
+  //   src: url('../font/NotoSansTC-Bold.otf') format('opentype');
+  //   src: url('../font/NotoSansTC-Light.otf') format('opentype');
+  //   src: url('../font/NotoSansTC-Medium.otf') format('opentype');
+  //   src: url('../font/NotoSansTC-Regular.otf') format('opentype');
+  //   src: url('../font/NotoSansTC-Thin.otf') format('opentype');
+}
+
+html {
+  font-family: Noto Sans TC, 黑體-繁, Apple LiGothic Medium, PingFang,
+    微軟正黑體, Microsoft JhengHei, WenQuanYi Zen Hei, helvetica, Arial,
+    sans-serif;
+  font-weight: var(--light);
+}
+
+input[type="text"] {
+  font-family: Noto Sans TC, 黑體-繁, Apple LiGothic Medium, PingFang,
+    微軟正黑體, Microsoft JhengHei, WenQuanYi Zen Hei, helvetica, Arial,
+    sans-serif;
+}
+
+.container {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+body {
+  position: relative;
+  color: var(--main-font-color);
+}

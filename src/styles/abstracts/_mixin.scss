@@ -1,0 +1,39 @@
+// RWD 斷點
+
+$mobileS: 320px; // ~320
+$mobileM: 375px; // 321~375
+$mobileL: 414px; // 376~414
+$mobile: 767px; // 415~767
+$pad: 1023px; // 768~1023
+$underContainer: 1310px; // 1024~1310
+$desktop: 1919px;
+
+@mixin mobileS {
+  @media (max-width: $mobileS) {
+    @content;
+  }
+}
+
+@mixin mobileM {
+  @media (max-width: $mobileM) {
+    @content;
+  }
+}
+
+@mixin mobileL {
+  @media (max-width: $mobileL) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin pad {
+  @media (max-width: $pad) {
+    @content;
+  }
+}

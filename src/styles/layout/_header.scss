@@ -1,0 +1,15 @@
+.header {
+  padding: 35px 0;
+  background-color: var(--money-gray-4);
+  text-align: center;
+  &-text {
+    font-size: 30px;
+  }
+
+  .container {
+    @include pad() {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
