@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --config ./build/webpack.dev.conf.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.conf.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --config ./build/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js",
     "prettify": "prettier --write src/**/*.js src/**/**/*.scss"
   },
   "author": "",

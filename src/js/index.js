@@ -1,9 +1,11 @@
 console.log("index.js");
+import testImg from "@/img/test.png";
 
 function setImage() {
-  const target = document.querySelector("#image");
+  const imageHolder = document.querySelector(".image-holder");
   const img = document.createElement("img");
-  target.appendChild(img);
+  img.setAttribute("src", testImg);
+  imageHolder.appendChild(img);
 }
 
 window.addEventListener("DOMContentLoaded", setImage);

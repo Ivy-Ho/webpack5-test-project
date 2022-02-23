@@ -3,9 +3,9 @@ console.log(process.env.NODE_ENV);
 const path = require("path");
 
 const { merge } = require("webpack-merge");
-const baseWebpackConfig = require("./webpack.base.conf");
+const common = require("./webpack.base");
 
-module.exports = merge(baseWebpackConfig, {
+module.exports = merge(common, {
   mode: "development",
   devtool: "eval-source-map",
   devServer: {

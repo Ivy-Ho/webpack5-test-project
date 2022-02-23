@@ -2,14 +2,14 @@ console.log(process.env.NODE_ENV);
 
 const { merge } = require("webpack-merge");
 
-const baseWebpackConfig = require("./webpack.base.conf");
+const common = require("./webpack.base");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-module.exports = merge(baseWebpackConfig, {
+module.exports = merge(common, {
   mode: "production",
   devtool: "source-map",
   output: {
-    filename: "js/[name].[hash].js" // 覆蓋 baseWebpackConfig 設定
+    filename: "js/[name].[hash].js" // 覆蓋 common 設定
   },
   plugins: [new CleanWebpackPlugin()]
   // other production config

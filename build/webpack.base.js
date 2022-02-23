@@ -5,7 +5,7 @@ const devMode = process.env.NODE_ENV !== "production";
 console.log(devMode);
 
 module.exports = {
-  context: path.resolve(__dirname, "../"), // 編譯時的根目錄 (相對路徑尋找文件用)
+  context: path.resolve(__dirname, "../"),
   entry: "./src/main.js",
   output: {
     path: path.resolve(__dirname, "../dist"),
@@ -31,6 +31,10 @@ module.exports = {
               "postcss-loader",
               "sass-loader"
             ]
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
       // {
       //   test: /.css$/i,
@@ -78,5 +82,13 @@ module.exports = {
         }
       }
     }
-  }
+  },
+  resolve: {
+    // modules: [paths.src, 'node_modules'],
+    // extensions: ['.js', '.jsx', '.json'],
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+      // assets: paths.public,
+    },
+  },
 };

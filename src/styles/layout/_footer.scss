@@ -1,11 +1,12 @@
 .footer {
   padding: 35px 0;
-  background-color: var(--money-gray-4);
+  background-color: #fff39f;
   text-align: center;
   position: relative;
   // font-family: 'Font Awesome\ 5 Free';
   &-text {
     font-size: 30px;
+    font-weight: var(--medium);
   }
 
   .container {
