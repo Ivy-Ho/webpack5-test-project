@@ -10,8 +10,10 @@ module.exports = merge(common, {
   devtool: "eval-source-map",
   devServer: {
     static: {
-      directory: path.join(__dirname, "/src")
+      directory: path.join(__dirname, "/src"),
+      watch: true
     },
+    watchFiles:['src'],
     compress: false,
     hot: true,
     liveReload: true,
@@ -20,5 +22,5 @@ module.exports = merge(common, {
     client: {
       overlay: false
     }
-  }
+  },
 });
