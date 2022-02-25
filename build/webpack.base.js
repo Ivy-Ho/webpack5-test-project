@@ -32,10 +32,6 @@ module.exports = {
       //   use: devMode ? ['style-loader', 'css-loader'] : [ MiniCssExtractPlugin.loader, 'css-loader'],
       // },
 
-      // {
-      //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
-      //   type: 'asset/resource',
-      // },
       {
         test: /.(png|jpe?g|webp|svg|woff2?|ttf)$/i,
         type: 'asset',    //與 'asset/resource' 的差別   // https://webpack.js.org/guides/asset-modules/
@@ -47,30 +43,6 @@ module.exports = {
             maxSize: 4 * 1024
           }
         }
-      },
-      // {
-      //   test: /\.(png|jpe?g|webp|svg)$/i,
-      //   use: [
-      //     {
-      //       // 直接配置 url-loader 就好，超過上限的資源會自動 fallback 給 file-loader
-      //       loader: 'url-loader',
-      //       options: {
-      //         name: 'img/[name].[ext]',
-      //         limit: 10000,
-      //       },
-      //     },
-      //   ],
-      // },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf|)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "font/[name].[ext]"
-            }
-          }
-        ]
       },
       {
         test: /\.m?js$/,

@@ -1,4 +1,5 @@
 console.log("index.js");
+import axios from 'axios';
 import testImg from "@/img/test.png";
 
 function setImage() {
@@ -9,3 +10,18 @@ function setImage() {
 }
 
 window.addEventListener("DOMContentLoaded", setImage);
+
+class MyName {
+  constructor (name){
+    this.name = name
+  }
+  async readMyName() {
+    // 測 api 用這裡測
+    const { data } = await axios.get('https://randomuser.me/api/')
+    console.log(data)
+  }
+}
+
+const me = new MyName('Ginger');
+
+console.log(me.readMyName());
