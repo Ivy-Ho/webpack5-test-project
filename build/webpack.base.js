@@ -17,28 +17,49 @@ module.exports = {
         test: /.(hbs|handlebars)$/i,
         loader: "handlebars-loader",
         options: {
-          inlineRequires: "/assets/",
+          inlineRequires: "/img/", //放圖片資源的資料夾叫什麼名字   //沒 inlineRequire話，會用到相對路徑，build出來依經驗會問題，除非所有東西都用直接從根目錄出發
           partialDirs: [path.join(__dirname, "src/partials")]
         }
       },
       {
-        test: /\.(sass|scss|css)$/,
+        test: /\.s[ac]ss$/i,
         use: devMode
           ? ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
-          : [
-              MiniCssExtractPlugin.loader,
-              "css-loader",
-              "postcss-loader",
-              "sass-loader"
-            ]
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+          : [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"]
       },
       // {
       //   test: /.css$/i,
       //   use: devMode ? ['style-loader', 'css-loader'] : [ MiniCssExtractPlugin.loader, 'css-loader'],
+      // },
+
+      // {
+      //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
+      //   type: 'asset/resource',
+      // },
+      {
+        test: /.(png|jpe?g|webp|svg|woff2?|ttf)$/i,
+        type: 'asset',    //與 'asset/resource' 的差別   // https://webpack.js.org/guides/asset-modules/
+        parser: {
+          /**
+           * 自動判斷超過 4kb 就用base64注入
+           */
+          dataUrlCondition: {
+            maxSize: 4 * 1024
+          }
+        }
+      },
+      // {
+      //   test: /\.(png|jpe?g|webp|svg)$/i,
+      //   use: [
+      //     {
+      //       // 直接配置 url-loader 就好，超過上限的資源會自動 fallback 給 file-loader
+      //       loader: 'url-loader',
+      //       options: {
+      //         name: 'img/[name].[ext]',
+      //         limit: 10000,
+      //       },
+      //     },
+      //   ],
       // },
       {
         test: /\.(woff|woff2|eot|ttf|otf|)$/,
@@ -84,11 +105,8 @@ module.exports = {
     }
   },
   resolve: {
-    // modules: [paths.src, 'node_modules'],
-    // extensions: ['.js', '.jsx', '.json'],
     alias: {
       '@': path.resolve(__dirname, '../src'),
-      // assets: paths.public,
     },
   },
 };
