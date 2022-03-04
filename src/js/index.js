@@ -22,6 +22,15 @@ class MyName {
   }
 }
 
-const me = new MyName('Ginger');
+const me = new MyName('Ivy');
 
 console.log(me.readMyName());
+
+const app = new Vue({
+  el: '#app',
+  data() {
+    return {
+      text1 : 'this is from vue data'
+    }
+  },
+})

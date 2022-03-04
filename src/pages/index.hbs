@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+
+  {{!-- Vue 開發模式 --}}
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> 
+
+  {{!-- Vue 正式上線 --}}
+  {{!-- <script src="@/vendor/vue.min.js"></script> --}}
 </head>
 <body>
   {{> ../partials/header}}
@@ -18,6 +24,14 @@
   <img class="html-img" src="@/img/_app_store_btn.svg" alt="">
   <img class="html-img" src="@/img/google_play.svg" alt="">
 
+  <div id="app">
+    <div class="wrapper">
+      <h3>vue testing</h3>
+      <p>
+        \{{ text1 }}
+      </p>
+    </div>
+  </div>
 
   {{> ../partials/footer}}
 </body>
