@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "prettify": "prettier --write src/**/*.js src/**/**/*.scss"
   },
   "author": "",
@@ -24,7 +24,6 @@
     "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.1",
     "html-webpack-plugin": "^5.5.0",
-    "image-webpack-loader": "^8.1.0",
     "mini-css-extract-plugin": "^2.5.3",
     "node-sass": "^7.0.1",
     "postcss-loader": "^6.2.1",

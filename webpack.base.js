@@ -5,10 +5,10 @@ const devMode = process.env.NODE_ENV !== "production";
 console.log(devMode);
 
 module.exports = {
-  context: path.resolve(__dirname, "../"),
-  entry: "./src/main.js",
+  context: path.resolve(__dirname, "src"),
+  entry: "./main.js",
   output: {
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: "js/[name].js"
   },
   module: {
@@ -55,7 +55,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/pages/index.hbs",
+      template: "pages/index.hbs",
       filename: "index.html"
     }),
     new MiniCssExtractPlugin({
@@ -78,7 +78,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '../src'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
 };
