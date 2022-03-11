@@ -17,7 +17,7 @@ class MyName {
   }
   async readMyName() {
     // 測 api 用這裡測
-    const { data } = await axios.get('https://randomuser.me/api/')
+    const { data } = await axios.get('/api/group')
     console.log(data)
   }
 }

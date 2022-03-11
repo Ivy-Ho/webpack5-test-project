@@ -19,8 +19,14 @@ module.exports = merge(common, {
     liveReload: true,
     port: 9090,
     open: true,
-    client: {
-      overlay: false
+    // client: {
+    //   overlay: false
+    // },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      }
     }
   },
 });
